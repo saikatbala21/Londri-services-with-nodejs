@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Mart</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+       (function(){
+           emailjs.init({
+             publicKey: "pRimX8cXGd8sW0BO-",
+           });
+       })();
+    </script>
+</head>
+<body>              
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h2>Laundry Mart</h2>
+                </div>
+                <ul class="nav-link">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                
+                </ul>
+                <div class="bttn">
+                <a href="#username" class="btn">Username</a>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="left">
+                <h1>Revitalize Your</h1>
+                <h1>Clothes with Expert</h1>
+                <h1 id="h1s">Laundry Service!</h1>
+             <p>From premium dry cleaning to swift wash and fold ,we delivare care and convenience.Schedule a pickup and rediscover the freshness of your clothes today!</p>
+             <div class="hero-button">
+                <a id="services-link" href="#book" onclick="scrollToSection()" class="btn-btn">Book a service today</a>
+             </div>
+            </div>
+            <div class="right">
+                <img class="img" src="https://i.pinimg.com/736x/e4/b1/ae/e4b1ae6126d895d00b238ad673d02019.jpg"
+                height="350px">
+            </div>
+            
+        </section>
+    </main>
+    <section class="sov">
+        <div class="over-view">
+            <div class="ov">
+            <h2>Our Achievments</h2>
+            </div>
+            <div class="ov">
+            <h3>15+</h3>
+            <p id="pi"> Service</p>
+            </div>
+            <div class="ov">
+                <h3>240+</h3>
+                <p id="pi">Happy Customer</p>
+            </div>
+            <div class="ov">
+                <h3>2+ Yrs</h3>
+                <p id="pi">Experience</p>
+            </div>
+        </div>
+    </section>
+ <section class="os">
+    <div class="ser2">  
+      <div class="service">
+         <div class="ser">
+            <h2>Our Services</h2>
+            <p id="par">Click On The Add To Cart Button To Add The Services To Your Cart</p>
+         </div>
+         <div class="ser-3">
+            
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Dry cleaning . <h5 style="color:blue;">&#x20B9 200</h5>
+          <div class="btn3">
+          <button id="btn3"  onclick="addToCart1()" style="margin-left: 8rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Washing & Fold . <h5 style="color:blue;">&#x20B9 100</h5>
+          <div class="btn3">
+            <button id="btn4" onclick="addToCart2()" style="margin-left: 6.8rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Ironing . <h5 style="color:blue;">&#x20B9 30</h5>
+          <div class="btn3">
+           <button id="btn5" onclick="addToCart3()" style="margin-left: 10.3rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Stain Removal . <h5 style="color:blue;">&#x20B9 500</h5>
+          <div class="btn3">
+            <button id="btn6" onclick="addToCart4()" style="margin-left: 7.3rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Leather & Sute Cleaning . <h5 style="color:blue;">&#x20B9 999</h5>
+          <div class="btn3">
+            <button id="btn7" onclick="addToCart5()" style="margin-left: 3.8rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <div class="service2">
+          <ion-icon class="icon" name="shirt-outline" style="color: rgb(234, 37, 70);font-size: 1rem;"></ion-icon>  Wedding Dress Cleaning . <h5 style="color:blue;">&#x20B9 2800</h5>
+          <div class="btn3">
+            <button id="btn8" onclick="addToCart6()" style="margin-left: 3.3rem;"><ion-icon name="add-circle-outline"></ion-icon>Added Items</button>
+          </div>
+         </div>
+         <br/>
+         <br/>
+         <div class="serv3">
+         </div>
+         <div class="service3">
+            <a><ion-icon name="add-circle-outline"></ion-icon>Add Items to the cart and book now</a>
+         </div>
+          
+
+
+
+
+
+        </div>
+        <div class="aditems">
+          <div class="aditem">
+             <h6>Add Items</h6>
+               <div class="sno">
+                 <p style="font-size: small;"> S.no  Service name</p>
+                 <p id="sno1" style="font-size:small;">Price</p>  
+               </div>
+          </div> 
+         
+           <div class="aditems1">
+                <div class="item-add">
+                    <h4 id="remove" >No Items Added </h4>
+                    <p id="no-items"></p>
+                    <p id="no-items1"></p>
+                    <p id="no-items2"></p>
+                    <p id="no-items3"></p>
+                    <p id="no-items4"></p>
+                    <p id="no-items5"></p>
+                </div>
+                <div class="item-add1">
+                    
+                   
+                    <h5 id="totalV">Total: <span style='padding-left: 12rem;'>0</span></h5>
+                </div>
+            </div> 
+          <div class="aditem2"  >
+            <From id="contact-form" class="fromsd">
+                <h4>Book Now</h4>
+                <div class="from-1">
+                    <label>Full Name</label>
+                   <input type="text" name="fullname" id="fullname" placeholder="Enter your Name" required style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;padding-right: 5px;">
+                </div>
+                
+                <div class="fdetail">
+                    <label>Email ID</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email id" required style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;padding-right: 5px;">
+                </div>
+                <div class="fdetail">
+                    <label>Phone Number</label>
+                    <input type="number" name="phone_number" id="phone_number" placeholder="Enter your Phone Number" required style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;padding-right: 5px;">
+                </div>
+            
+            </From>
+
+              
+             <a class="book" href="#services" onclick="sendEmail(event)">Book Now</a>
+                  
+              
+             <p id="email-status" style="font-size: 7px;padding-top: 4px;padding-left: 7.6rem;" ></p>
+
+          </div>
+            
+
+
+                
+
+
+
+        
+        </div>     
+
+        
+    </div>  
+  </section>
+  <section class="footer">
+    <div class="footer1">
+        <div class="card">
+           <img class="img2" src="file:///E:/study%20materal/MERN/Assingment/londri/icons/washing.png">
+           
+           <br/>
+           <h4>Premium Services</h4>
+           
+               <p id="footer-desc">Elevate your wardrobe with our meticulous dry cleaning ensure garments look and feel as good as new </p>
+        </div>
+        <div class="card">
+            <img class="img2" src="file:///E:/study%20materal/MERN/Assingment/londri/icons/support.png">
+           <br/>
+           <h4>Quick Support</h4>
+           
+               <p id="footer-desc">We're committed to providing prompt solutuins to ensure your exprience is smooth and worry-free</p>
+        </div>
+        <div class="card">
+           <img class="img2" src="file:///E:/study%20materal/MERN/Assingment/londri/icons/delivery.png">
+           <br/>
+           <h4>Hassle Free Delivery</h4>
+           
+               <p id="footer-desc">Enjoy semless service with our convenient pickup and delivery options</p>
+        </div>
+         <div class="card">
+           <img class="img2" src="file:///E:/study%20materal/MERN/Assingment/londri/icons/handshake.png">
+           <br/>
+           <h4>Affordable Pricing</h4>
+           <p id="footer-desc">Expriences exceptional care without breaking the bank-our affordable prices make laundry day stress-free and ensure quality service for everyone</p>
+        </div>
+        
+
+          
+        
+        
+    </div>
+    <div class="footer-2">
+      
+      <div class="subscribe">
+          <div class="header3">
+            <h3>Subscribe to our</h3>   
+            <h3>newsletter.</h3>
+          </div>
+          <div class="name">
+             <input type="text" name="name" placeholder="Enter your name" style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;padding-right: 5px;">
+          </div>
+          <div class="email">
+
+             <input type="email" name="email" placeholder="Enter your email id" style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;padding-right: 5px;">
+             
+          </div>
+          <br/>
+         
+      </div>  
+       <button type="submit" class="btn4" >Subscribe</button>
+       <p id="footer-desc"></p>
+    </div>
+    <div class="footer-3">
+        <div class="footer-3-1">
+            <h4>Laundry Mart</h4>
+            <br/>
+            <h5>About Us</h5>
+            <p id="footer-desc">Learn more about our company </p>
+            <p id="footer-desc">and our commitment to excellence</p>
+        </div>
+        <div class="footer-3-1">
+            <h5>Importeant Links</h5>
+            <p id="footer-desc">About us</p>
+            <p id="footer-desc">Contact us</p>      
+            <p id="footer-desc">Privacy Policy</p>  
+            <p id="footer-desc">Terms & Conditions</p>
+            <p id="footer-desc">Refund Policy </p>
+        </div>
+        <div class="footer-3-1">
+            <h5>Contact Us</h5>
+            <p id="footer-desc">Email: info@laundrymart.com</p>
+            <p id="footer-desc">Phone: +91 9123456780</p>
+        </div>
+        <div class="footer-3-1">
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+            </div>
+       </div>
+    </div>   
+  </section>      
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="content.js"></script>
+  <script src="email.js"></script> 
+</body>
+</html>
