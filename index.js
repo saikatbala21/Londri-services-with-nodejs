@@ -1,72 +1,45 @@
-const http =require('http');
-const port=3000;
-const fs=require('fs');
-const filePath=fs.readFileSync('./index.html');
-const filePath1=fs.readFileSync('./styles.css');
-const contents=fs.readFileSync('./content.js');
-const Emails=fs.readFileSync('./email.js');
-const contact=fs.readFileSync('./contact.html');
-const contactcs=fs.readFileSync('./contact.css');
-const about=fs.readFileSync('./about.html');
-const aaboutcs=fs.readFileSync('./about.css');
+const http = require('http');
+const fs = require('fs');
+const port = 3000;
+function loadFile(path) {
+  try {
+    return fs.readFileSync(path, 'utf8');
+  } catch (err) {
+    console.error(`500 Error reading this file ${path}:`, err.message);
+    return null;
+  }
+}
+const files = {
+  '/': { content: loadFile('./index.html'), type: 'text/html' },
+  '/home': { content: loadFile('./index.html'), type: 'text/html' },
+  '/styles.css': { content: loadFile('./styles.css'), type: 'text/css' },
+  '/content.js': { content: loadFile('./content.js'), type: 'text/javascript' },
+  '/email.js': { content: loadFile('./email.js'), type: 'text/javascript' },
+  '/contact': { content: loadFile('./contact.html'), type: 'text/html' },
+  '/contact.html': { content: loadFile('./contact.html'), type: 'text/html' },
+  '/contact.css': { content: loadFile('./contact.css'), type: 'text/css' },
+  '/about': { content: loadFile('./about.html'), type: 'text/html' },
+  '/about.html': { content: loadFile('./about.html'), type: 'text/html' },
+  '/about.css': { content: loadFile('./about.css'), type: 'text/css' }
+};
 
-const server=http.createServer((req,res)=>{
-    if(req.method==='GET'){
-        if(req.url==='/home' || req.url==='/'){
-          res.writeHead(200,{'Content-Type':'text/html'});
-          res.write(filePath);
-          res.end();
-        }
-      
-        else if(req.url==='/styles.css'){
-          res.writeHead(200,{'Content-Type':'text/css'});
-          res.write(filePath1);
-          res.end();
-        } 
-        else if(req.url==='/content.js'){
-         res.writeHead(200,{'Content-Type':'text/javascript'});
-         res.write(contents);
-         res.end();
-        } 
-        else if(req.url==='/email.js'){
-         res.writeHead(200,{'Content-Type':'text/javascript'});
-         res.write(Emails);
-         res.end();
-        }
-        else if(req.url==='/contact'|| req.url==='/contact.html'){
-          res.writeHead(200,{'Content-Type':'text/html'});
-          res.write(contact);
-          res.end();
+const server = http.createServer((req, res) => {
+  if (req.method === 'GET') {
+    const file = files[req.url];
 
-        }
-        else if(req.url==='/contact.css'){
-          res.writeHead(200,{'Content-Type':'text/css'});
-          res.write(contactcs);
-          res.end();
-        }
-         else if(req.url==='/about'|| req.url==='/about.html'){
-          res.writeHead(200,{'Content-Type':'text/html'});
-          res.write(about);
-          res.end();
-
-        }
-        else if(req.url==='/about.css'){
-          res.writeHead(200,{'Content-Type':'text/css'});
-          res.write(aaboutcs);
-          res.end();
-        }
-        else{
-            res.writeHead(404, { 'Content-Type': 'text/html' });
-            res.end('<h1>404 Not Found</h1>');
-        }
-        
-
+    if (file && file.content) {
+      res.writeHead(200, { 'Content-Type': file.type });
+      res.end(file.content);
+    } else {
+      res.writeHead(404, { 'Content-Type': 'text/html' });
+      res.end('<h1>404 Not Found</h1>');
     }
-    else{
-        res.writeHead(404,{'Content-Type':'text/html'});
-        res.write('<h1>404 Not Found</h1>');
-        res.end();
-    }     
-} ).listen(port,()=>{
-    console.log(`Server is running at http://localhost:${port}`);
-}) 
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.end('<h1>404 Not Found</h1>');
+  }
+});
+
+server.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});
