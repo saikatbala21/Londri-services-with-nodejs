@@ -44,8 +44,8 @@ node -v
 
 1. **Create the Project Directory:**
    ```bash
-   mkdir vanilla-node-server
-   cd vanilla-node-server
+   mkdir node-server
+   cd node-server
    ```
 
 2. **Create the Files:**
