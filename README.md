@@ -1,4 +1,4 @@
-# Vanilla Node.js Web Server
+## Node.js Web Server
 
 A lightweight, dependency-free HTTP web server built entirely using Node.js core modules (`http` and `fs`). This project demonstrates native routing, asset serving, and basic error handling without relying on third-party frameworks like Express.
 
